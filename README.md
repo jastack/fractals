@@ -22,9 +22,11 @@ This app will be single page with control/input boxes and a centered display box
 
 ## Architecture and Technologies
 
-This project will mostly JavaScript and HTML5 Canvas, although I am also interested in learning about WebGL to potentially help with some animations.
+This project will use mostly JavaScript and HTML5 Canvas, although I am also interested in learning about WebGL to potentially help with some animations.
 
 It will also use webpack to bundle and serve up all the scripts.
+
+###I will add more to this section as I implement the project and have a better idea of exactly what the architecture will be###
 
 ## Implementation Timeline
 
