@@ -22,7 +22,17 @@ This app will be single page with control/input boxes and a centered display box
 
 ## Architecture and Technologies
 
-This project will use mostly JavaScript and HTML5 Canvas, although I am also interested in learning about WebGL to potentially help with some animations.
+This project will use JavaScript and HTML5 Canvas, and I am also interested in learning about WebGL to potentially help with some animations if I am able to finish the MVP first.
+
+In order to represent a series of complex number iterations, I will need to be able to map a color gradient to specific pixels, which can be done using Canvas. I will also need to figure out how to allow a user to input initial state information and render the fractal accordingly.
+
+I imagine I will have a file for each fractal I produce. So there will be:
+
+mandlebrot.js
+
+koch.js
+
+sierpinski.js
 
 It will also use webpack to bundle and serve up all the scripts.
 
@@ -30,13 +40,13 @@ It will also use webpack to bundle and serve up all the scripts.
 
 ## Implementation Timeline
 
-**Day 1:** Get the basic skeleton setup. Configure webpack and the entry file. Learn about canvas and have a better idea of how I will implement the fractal generator.
+**Day 1:** Get the basic skeleton setup. Configure webpack and the entry file. Learn about canvas and have a better idea of how I will implement the fractal generator. Play around with altering shapes and lines in Canvas, learn how to apply a variable gradient color to specific pixels. Start working on mandlebrot.js.
 
-**Day 2:** Complete a basic fractal output.
+**Day 2:** Finish mandlebrot.js and add user interactivity (ability to change a few starting conditions for example). Learn more about variable inputs in canvas, and how to get an image to re-render.
 
-**Day 3:** Add additional fractal options. And begin to add user functionality.
+**Day 3:** Add additional koch.js and sierpinski.js. Play around more with canvas to think of additional ways to include user interactivity (like zoom and pan for mandlebrot or ways to display each step for koch and sierpinski).
 
-**Day 4:** Add full user functionality (zoom, change starting conditions, etc.). Make sure it looks pretty!
+**Day 4:** Finish any items left over from the MVP list. Make sure it looks pretty!
 
 ## Bonus features
 
