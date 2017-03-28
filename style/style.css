@@ -1,0 +1,22 @@
+body {
+  background-color: black;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header h2 {
+  font-size: 32px;
+  color: #FFF;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  border: 1px solid black;
+}
