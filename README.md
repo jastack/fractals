@@ -9,6 +9,7 @@ FractaLab is built with only HTML5 and Javascript -- utilizing HTML5 Canvas and 
 ![Main Page](docs/mainpage.png)
 [FractaLab]:https://jastack.github.io/fractals
 
+
 ## Features
 
 Includes the following three fractals:
