@@ -7,7 +7,7 @@
 FractaLab is built with only HTML5 and Javascript -- utilizing HTML5 Canvas and CSS3 to render the fractals and Javascript to perform the calculations behind-the-scenes.
 
 ![Main Page](docs/mainpage.png)
-[FractaLab]:https://jastack.github.io/fractals
+[FractaLab]: https://jastack.github.io/fractals
 
 
 ## Features
