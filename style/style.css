@@ -187,6 +187,27 @@ img {
   right: 15%;
 }
 
+.koch-info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+
+.sierp-info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.mandel-info{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
 h4 {
   font-size: 16px;
   font-weight: bold;
