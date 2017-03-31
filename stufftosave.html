@@ -1,0 +1,177 @@
+<canvas id="koch" width="300" height="300">
+  <h3>Your browser doesn't support HTML5 Canvas</h3>
+</canvas>
+
+<script type="text/javascript" src='lib/koch.js'></script>
+
+<label for="zoom">Zoom</label>
+<input type="range" id="zoom" min="100" max="1200" step="10" value="100" oninput="mand.updateZoom(value)">
+
+<label for="shiftX">Shift X</label>
+<input type="range" id="shiftX" min="-3" max="5" step=".25" value="1.7" oninput="mand.updateX(value)">
+
+<label for="shiftY">Shift Y</label>
+<input type="range" id="shiftY" min="-3" max="5" step=".25" value="1.5" oninput="mand.updateY(value)">
+
+<label for="iterations">Resolution</label>
+<input type="range" id="iterations" min="10" max="1000" step="10" value="10" oninput="mand.updateRes(value)">
+
+  <script type="text/javascript" src='lib/mandlebrot.js'></script>
+
+
+  var canvas = document.getElementById('display');
+  var context = canvas.getContext('2d');
+
+  function getMousePos(sheet, evt) {
+    var rect = sheet.getBoundingClientRect();
+    return {
+      x: evt.clientX - rect.left,
+      y: evt.clientY - rect.top
+    };
+  }
+
+  canvas.addEventListener('mousemove', function(evt) {
+    var mousePos = getMousePos(canvas, evt);
+    setLimit(mousePos.x);
+    }, false
+  );
+
+  class Sierpinski {
+
+  }
+
+  const startingPoints = {
+    p1: {
+      x: 0,
+      y: -150
+    },
+    p2: {
+      x: 150,
+      y: 100
+    },
+    p3: {
+      x: -150,
+      y: 100
+    }
+  };
+
+  const midpoint = (pointA, pointB) => {
+    const xCoordA = pointA.x;
+    const yCoordA = pointA.y;
+    const xCoordB = pointB.x;
+    const yCoordB = pointB.y;
+
+    const xMid = (xCoordB + xCoordA) / 2;
+    const yMid = (yCoordB + yCoordA) / 2;
+
+    return {x: xMid, y: yMid};
+
+  };
+  //
+  // const first = midpoint(startingPoints.p1, startingPoints.p2);
+  // const second = midpoint(startingPoints.p2, startingPoints.p3);
+  // const third = midpoint(startingPoints.p3, startingPoints.p1);
+  context.translate(210, 210);
+  // context.scale(1, -1);
+
+
+
+  const sierp = (a, b, c, limit = 3, line) => {
+    let triA = {
+      top: a,
+      right: midpoint(a, b),
+      left: midpoint(a, c)
+    };
+
+    let triB = {
+      top: midpoint(a, b),
+      right: b,
+      left: midpoint(b, c)
+    };
+
+    let triC = {
+      top: midpoint(a, c),
+      right: midpoint(b, c),
+      left: c
+    };
+
+    let mids = {
+      first: midpoint(a, b),
+      second: midpoint(b, c),
+      third: midpoint(a, c)
+    };
+
+    if (limit > 0){
+      sierp(triA.top, triA.right, triA.left, limit - 1, line);
+      sierp(triB.top, triB.right, triB.left, limit - 1, line);
+      sierp(triC.top, triC.right, triC.left, limit - 1, line);
+    } else {
+
+      context.beginPath();
+      context.moveTo(a.x, a.y);
+      context.lineTo(b.x, b.y);
+      context.lineTo(c.x, c.y);
+      context.lineTo(a.x, a.y);
+      context.lineWidth = line;
+      context.strokeStyle = '#E2694F';
+      context.shadowColor = '#999';
+      context.shadowBlur = 20;
+      context.shadowOffsetX = 15;
+      context.shadowOffsetY = 15;
+      context.stroke();
+
+      context.beginPath();
+      context.moveTo(mids.first.x, mids.first.y);
+      context.lineTo(mids.second.x, mids.second.y);
+      context.lineTo(mids.third.x, mids.third.y);
+      context.lineTo(mids.first.x, mids.first.y);
+      context.lineWidth = line;
+      context.strokeStyle = '#E2694F';
+      context.shadowColor = '#999';
+      context.shadowBlur = 20;
+      context.shadowOffsetX = 15;
+      context.shadowOffsetY = 15;
+      context.stroke();
+    }
+  };
+
+  const setLimit = (xPos) => {
+    if (xPos < 60) {
+      drawFirst();
+    } else if (xPos < 120) {
+      drawShape(0, 4);
+    } else if (xPos < 180) {
+      drawShape(1, 3);
+    } else if (xPos < 240) {
+      drawShape(2, 2);
+    } else if (xPos < 300) {
+      drawShape(3, 1);
+    } else if (xPos < 360) {
+      drawShape(4, 1);
+    } else if (xPos < 420) {
+      drawShape(5, 1);
+    }
+  };
+
+
+  function drawShape(limit, line){
+    context.clearRect(-210, -210, 420, 420);
+    sierp(startingPoints.p1, startingPoints.p2, startingPoints.p3, limit, line);
+  }
+
+  function drawFirst(){
+    context.clearRect(-210, -210, 420, 420);
+    context.lineJoin = 'round';
+    context.beginPath();
+    context.moveTo(startingPoints.p1.x, startingPoints.p1.y);
+    context.lineTo(startingPoints.p2.x, startingPoints.p2.y);
+    context.lineTo(startingPoints.p3.x, startingPoints.p3.y);
+    context.lineTo(startingPoints.p1.x, startingPoints.p1.y);
+    context.strokeStyle = '#E2694F';
+    context.shadowColor = '#999';
+    context.shadowBlur = 20;
+    context.shadowOffsetX = 15;
+    context.shadowOffsetY = 15;
+    context.lineWidth = 5;
+    context.stroke();
+  }

@@ -3,22 +3,90 @@
   <head>
     <meta charset="utf-8">
     <title>Fractals!</title>
+    <link rel="stylesheet" type="text/css" href="./style/reset.css">
     <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
   </head>
-  <body>
+  <body id="body">
+
 
     <div class="header">
-      <h2>Fractals</h2>
+      <h2 id="title">FractaLab</h2>
+    </div>
+
+
+    <div id="hover-over" onmouseover="deleteMouseOver()">
+      <h2>Mouse over to see the fractal grow </h2>
     </div>
 
     <div class="display">
-      <canvas id="display" width="600" height="600">
+
+      <div class="buttons">
+
+        <button  onclick="displaySnowflake()">Koch Snowflake</button>
+
+        <button  onclick="displayTri()">Sierpinski Triangle</button>
+
+        <button class="mandle" onclick="mand.changeStyles()">Mandlebrot Set</button>
+
+
+      </div>
+
+      <canvas id="display" width="380" height="380">
         <h3>Your browser doesn't support HTML5 Canvas</h3>
       </canvas>
+
+      <canvas id="displayTwo" width="380" height="380">
+        <h3>Your browser doesn't support HTML5 Canvas</h3>
+      </canvas>
+
+      <canvas id="mandle" width="900" height="1000"></canvas>
+
+      <!-- <div class="info"></div> -->
+
     </div>
 
-    <button type="button" name="button" onclick="toggleColor()">Change Color!</button>
+    <div class="colors">
+      <button id="red" onclick="toggleOrange()"></button>
+
+      <button id="blue" onclick="toggleBlue()"></button>
+
+      <button id="green" onclick="toggleGreen()"></button>
+
+      <button id="gold" onclick="toggleGold()"></button>
+
+      <div class="switches">
+        <button id="switch" onclick="dimLights()">
+          <img src="./off.svg"></img>
+        </button>
+        <button id="switch" onclick="onLights()">
+          <img src="./on.svg"></img>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="info-box">
+
+    </div>
+
+
+    <script type="text/javascript" src='lib/koch.js'></script>
 
     <script type="text/javascript" src='lib/mandlebrot.js'></script>
+
+    <script type="text/javascript" src='lib/sierp.js'>
+    </script>
+
+    <script type="text/javascript" src='lib/buttons.js'>
+    </script>
+
+
+
+
+
+
+
+
   </body>
 </html>

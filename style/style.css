@@ -1,22 +1,191 @@
 body {
-  background-color: black;
+  background-color: #fafafa;
+  transition: background-color .5s;
+  font-family: 'Russo One', sans-serif;
 }
 
 .header {
   display: flex;
   justify-content: center;
+  margin: 20px;
 }
 
 .header h2 {
   font-size: 32px;
-  color: #FFF;
+  color: black;
+  transition: color .25s;
 }
 
-.display {
+.display > {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: .25s;
+}
+
+.input {
   display: flex;
   justify-content: center;
 }
 
-canvas {
-  border: 1px solid black;
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+}
+
+button {
+  justify-content: center;
+  color: #777;
+  transition: color .25s;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 2px solid rgba(0,0,0,.09);
+  border-radius: 3px;
+  margin-top: 20px;
+  margin-left: 15px;
+  width: 130px;
+}
+
+button:hover {
+  color: #000;
+  box-shadow: 0 2px 5px rgba(0,0,0,.04);
+  border: 2px solid rgba(0,0,0,.2);
+}
+
+#hover-over {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 39px;
+  left: 250px;
+  width: 420px;
+  height: 420px;
+  z-index: 15;
+  opacity: 1;
+}
+
+
+
+canvas[id="display"] {
+  position: fixed;
+  top: 39px;
+  left: 250px;
+  opacity: 1;
+  transition: opacity 1s;
+  z-index: 10
+}
+
+canvas[id="displayTwo"] {
+  position: fixed;
+  top: 39px;
+  left: 250px;
+  opacity: 0;
+  transition: opacity 1s;
+  z-index: 5
+}
+
+canvas[id="mandle"]{
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 2s;
+  z-index: -1
+}
+
+img {
+  width: 60px;
+  height: 60px;
+}
+
+button[id="red"]{
+  width: 50px;
+  height: 50px;
+  background-color: #E2694F;
+  background-clip: content-box;
+}
+
+#green {
+  width: 50px;
+  height: 50px;
+  background-color: #228B22;
+  background-clip: content-box;
+}
+
+#gold {
+  width: 50px;
+  height: 50px;
+  background-color: #DAA520;
+  background-clip: content-box;
+}
+
+
+
+
+#hover-over h2{
+  color: #777;
+  background-color: #fafafa;
+}
+
+button[id="blue"]{
+  width: 50px;
+  height: 50px;
+  background-color: #1E90FF;
+  background-clip: content-box;
+}
+
+.switches {
+  width: 188px;
+  height: 94px;
+}
+
+button[id="switch"]{
+  position: relative;
+  top: 0px;
+  left: 0px;
+  border: none;
+  box-shadow: none;
+  width: 50px;
+  height: 50px;
+  background-clip: content-box;
+}
+
+img {
+  /*background-color: #fafafa;*/
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+.on {
+  color: #FFF;
+}
+
+.colors {
+  position: fixed;
+  top: 75px;
+  left: 670px;
+}
+
+.info {
+  width: 300px;
+  height: 300px;
+  color: #000;
+  transition: color 2s;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.09);
+  border-radius: 3px;
+}
+
+
+.nav-box {
+  position: fixed;
+  top: 500px;
+  left: 400px;
 }
