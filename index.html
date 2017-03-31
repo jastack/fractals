@@ -27,7 +27,7 @@
 
         <button  onclick="displayTri()">Sierpinski Triangle</button>
 
-        <button class="mandle" onclick="mand.changeStyles()">Mandlebrot Set</button>
+        <button class="mandle" onclick="displayMandlebrot()">Mandlebrot Set</button>
 
 
       </div>
@@ -40,7 +40,7 @@
         <h3>Your browser doesn't support HTML5 Canvas</h3>
       </canvas>
 
-      <canvas id="mandle" width="900" height="1000"></canvas>
+      <canvas id="mandle" width="380" height="380"></canvas>
 
       <!-- <div class="info"></div> -->
 
@@ -56,10 +56,10 @@
       <button id="gold" onclick="toggleGold()"></button>
 
       <div class="switches">
-        <button id="switch" onclick="dimLights()">
+        <button id="switchOff" onclick="dimLights()">
           <img src="./off.svg"></img>
         </button>
-        <button id="switch" onclick="onLights()">
+        <button id="switchOn" onclick="onLights()">
           <img src="./on.svg"></img>
         </button>
       </div>
@@ -67,8 +67,16 @@
     </div>
 
     <div class="info-box">
+      <div class="koch-info">
+        <h4>Koch Snowflake</h4>
+        <p>This fractal is created by taking each line seqment, dividing it into three equal parts, then inserting an equilateral triangle into the middle section. It is one of the earliest fractal shapes to have be explored. It is named after Swedish mathematician Helge von Koch.</p>
+      </div>
 
+      <div class="sierp-info"></div>
+
+      <div class="mandle-info"></div>
     </div>
+
 
 
     <script type="text/javascript" src='lib/koch.js'></script>

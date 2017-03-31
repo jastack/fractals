@@ -91,10 +91,10 @@ canvas[id="displayTwo"] {
 
 canvas[id="mandle"]{
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 39px;
+  left: 250px;
   opacity: 0;
-  transition: opacity 2s;
+  transition: opacity .5s;
   z-index: -1
 }
 
@@ -103,7 +103,7 @@ img {
   height: 60px;
 }
 
-button[id="red"]{
+#red{
   width: 50px;
   height: 50px;
   background-color: #E2694F;
@@ -125,14 +125,12 @@ button[id="red"]{
 }
 
 
-
-
 #hover-over h2{
   color: #777;
   background-color: #fafafa;
 }
 
-button[id="blue"]{
+#blue{
   width: 50px;
   height: 50px;
   background-color: #1E90FF;
@@ -140,12 +138,13 @@ button[id="blue"]{
 }
 
 .switches {
+  position: absolute;
   width: 188px;
   height: 94px;
 }
 
-button[id="switch"]{
-  position: relative;
+#switchOff{
+  position: absolute;
   top: 0px;
   left: 0px;
   border: none;
@@ -153,6 +152,19 @@ button[id="switch"]{
   width: 50px;
   height: 50px;
   background-clip: content-box;
+  z-index: 10;
+}
+
+#switchOn{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border: none;
+  box-shadow: none;
+  width: 50px;
+  height: 50px;
+  background-clip: content-box;
+  z-index: 5;
 }
 
 img {
@@ -162,30 +174,29 @@ img {
   left: 0px;
 }
 
-.on {
-  color: #FFF;
-}
-
 .colors {
   position: fixed;
   top: 75px;
-  left: 670px;
+  left: 650px;
 }
 
-.info {
-  width: 300px;
-  height: 300px;
-  color: #000;
-  transition: color 2s;
-  padding: 20px;
-  box-shadow: 0 1px 4px rgba(0,0,0,.04);
-  border: 1px solid rgba(0,0,0,.09);
-  border-radius: 3px;
+.info-box {
+  position: absolute;
+  top: 450px;
+  left: 15%;
+  right: 15%;
 }
 
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #777;
+}
 
-.nav-box {
-  position: fixed;
-  top: 500px;
-  left: 400px;
+p {
+  font-size: 14px;
+  color: #777;
+  font-weight: lighter;
+  padding-left: 20px;
+  padding-right: 20px;
 }
