@@ -1,53 +1,40 @@
-# Fractals
+# FractaLab
 
 ## Background
 
-Fractals are a visually intriguing exploration of complex numbers and iteration. A fractal begins with a set of initial conditions and a relatively simple equation to iterate over, and at each step the images can change and often a surprising shape emerges.
+[FractalLab] is a fractal generator application to allow users to explore three different famous fractals -- the Koch Snowflake, the Sierpinski Triangle, and the Mandelbrot Set.
 
-## Functionality & MVP
+FractaLab is built with only HTML5 and Javascript -- utilizing HTML5 Canvas and CSS3 to render the fractals and Javascript to perform the calculations behind-the-scenes.
 
-With this fractal generator, users will be able to:
-- [ ] View several different fractal templates
-- [ ] Adjust initial conditions
-- [ ] Zoom in and navigate around the image
-- [ ] Mouse over image and watch simple fractal trees grow.
+![Main Page](docs/mainpage.png)
+[FractalLab]: https://jastack.github.io/fractals
 
-In addition the generator will include an about section that gives more information about fractals and how the generator works, as well as a production Readme.
+## Features
 
-## Wireframes
+Includes the following three fractals:
+  * Koch Snowflake
+  * Sierpinski Triangle
+  * Mandelbrot Set
 
-This app will be single page with control/input boxes and a centered display box. I haven't totally decided if there will be only one display box or if the user can scroll to see different type of fractals. But basically I imagine a display in the center to show the fractal, inputs on the top, and on the left fractal templates to choose from (koch curve, mandlebrot set, etc).
+Allows user to interact with fractals through:  
+  * Hover build
+  * Variable colors
+  * Change background for more contrast
 
-![wireframe](docs/wireframe.png)
+The generator also includes information about each fractal.
 
-## Architecture and Technologies
 
-This project will use JavaScript and HTML5 Canvas, and I am also interested in learning about WebGL to potentially help with some animations if I am able to finish the MVP first.
+## Technologies and Methodology
 
-In order to represent a series of complex number iterations, I will need to be able to map a color gradient to specific pixels, which can be done using Canvas. I will also need to figure out how to allow a user to input initial state information and render the fractal accordingly.
+FractaLab is able to produce fractals using only HTML5 and Javascript. The main page includes three canvas items stacked on top of each other. Each canvas can be turned on through Javascript functions that toggle the opacity levels.
 
-I imagine I will have a file for each fractal I produce. So there will be:
+The fractal generation for the first two fractals (Koch Snowflake and Sierpinski Triangle) comes through the implementation of a recursive function. I added an event listener to tell when a user's mouse hovers over the canvas. The x-coordinate of the mouse is then passed to the fractal generator functions, which then determines which step to render.
 
-mandlebrot.js
+The third fractal, while a little less user-interactive, goes through the canvas pixel-by-pixel to determine which coordinates belong in the set. It runs an iterative loop which can last for up to 100 iterations. If the coordinate is still within the "escape value" (which, in this case, is 4), the pixel is colored black. Otherwise is it colored a specific shade based on how many iterations it took to escape.
 
-koch.js
 
-sierpinski.js
+## Future Features
 
-It will also use webpack to bundle and serve up all the scripts.
-
-###I will add more to this section as I implement the project and have a better idea of exactly what the architecture will be###
-
-## Implementation Timeline
-
-**Day 1:** Get the basic skeleton setup. Configure webpack and the entry file. Learn about canvas and have a better idea of how I will implement the fractal generator. Play around with altering shapes and lines in Canvas, learn how to apply a variable gradient color to specific pixels. Start working on mandlebrot.js.
-
-**Day 2:** Finish mandlebrot.js and add user interactivity (ability to change a few starting conditions for example). Learn more about variable inputs in canvas, and how to get an image to re-render.
-
-**Day 3:** Add additional koch.js and sierpinski.js. Play around more with canvas to think of additional ways to include user interactivity (like zoom and pan for mandlebrot or ways to display each step for koch and sierpinski).
-
-**Day 4:** Finish any items left over from the MVP list. Make sure it looks pretty!
-
-## Bonus features
+I have the zoom and and feature all set for the Mandelbrot set. The only problem is that since it's such a computation-heavy display, making any coordinate changes takes a long time. I need to think more about a way to implement this without making the site seem really slow.
 
 Add more fractal options. Add animation. Add a clearly diagramed/animated explanation of the math behind fractals.

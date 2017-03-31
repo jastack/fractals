@@ -8,8 +8,8 @@ Fractals are a visually intriguing exploration of complex numbers and iteration.
 
 With this fractal generator, users will be able to:
 - [ ] View several different fractal templates
-- [ ] Adjust initial conditions
-- [ ] Zoom in and navigate around the image
+- [ ] Adjust the look of the fractals (colors, etc.)
+- [ ] Navigate around the image
 - [ ] Mouse over image and watch simple fractal trees grow.
 
 In addition the generator will include an about section that gives more information about fractals and how the generator works, as well as a production Readme.
