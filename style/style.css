@@ -146,7 +146,7 @@ img {
 #switchOff{
   position: absolute;
   top: 0px;
-  left: 0px;
+  left: 60px;
   border: none;
   box-shadow: none;
   width: 50px;
@@ -158,7 +158,7 @@ img {
 #switchOn{
   position: absolute;
   top: 0px;
-  left: 0px;
+  left: 60px;
   border: none;
   box-shadow: none;
   width: 50px;
@@ -184,7 +184,7 @@ img {
   position: absolute;
   top: 450px;
   left: 15%;
-  right: 15%;
+  right: 25%;
 }
 
 .koch-info{
